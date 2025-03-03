@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="left-side">
+            <div id="header">
+                <span id="word-part-1" class="word-part"></span>
+                <span id="word-part-2" class="word-part"></span>
+            </div>
+            <div id="main">
+                <div id="maze"></div>
+            </div>
+            <div id="footer">
+                <span id="level-info">Level: <span id="current-level">1</span> of <span id="total-levels">10</span></span>
+                <div id="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+        <div id="right-side">
+            <img id="word-image" src="" alt="Word Image">
+        </div>
+    </div>
+    <div id="cinematics-popup" style="display: none;">
+        <video id="cinematics-video" controls></video>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
