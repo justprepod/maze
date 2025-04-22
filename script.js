@@ -1,24 +1,26 @@
-class GUI {
-    constructor() {
-        this.currentLevelElement = document.getElementById('current-level');
-        this.totalLevelsElement = document.getElementById('total-levels');
-        this.wordPart1Element = document.getElementById('word-part-1');
-        this.wordPart2Element = document.getElementById('word-part-2');
-        this.wordImageElement = document.getElementById('word-image');
-        this.mazeElement = document.getElementById('maze');
-        this.progressBarFillElement = document.getElementById('progress-fill');
-        this.cinematicsPopupElement = document.getElementById('cinematics-popup');
-        this.cinematicsVideoElement = document.getElementById('cinematics-video');
+document.addEventListener('DOMContentLoaded', function() {
+    const loadScreen = document.getElementById('load-screen');
+    const gameContainer = document.getElementById('game-container');
+    
+    // Hide all game elements initially
+    gameContainer.style.display = 'none';
+    
+    function startGame() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const closeOnFinish = urlParams.get("close-on-finish");
+        console.log(closeOnFinish);
+        
+        document.removeEventListener('keydown', startGame);
+        document.removeEventListener('click', startGame);
+        // Start the game
+        loadScreen.style.display = 'none';
+        gameContainer.style.display = 'flex';
+        const game = new Game(closeOnFinish);
+        game.start();
     }
 
-    // Interfaces to update elements
-    updateCurrentLevel(level) {}
-    updateTotalLevels(levels) {}
-    updateWordPart1(text) {}
-    updateWordPart2(text) {}
-    updateWordImage(src) {}
-    updateMaze(mazeData) {}
-    updateProgressBar(progress) {}
-    showCinematics(videoSrc) {}
-    hideCinematics() {}
-}
+    // Add event listener for keydown events
+    document.addEventListener('keydown', startGame);
+    document.addEventListener('click', startGame);
+});

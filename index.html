@@ -3,34 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reading Game</title>
+    <title>Letter maze</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<!--v0.1.1 -->
 <body>
+    <div id="load-screen">
+        <img id="load-image" src="assets/char.png" alt="Click to start">
+    </div>
+
     <div id="game-container">
-        <div id="left-side">
-            <div id="header">
-                <span id="word-part-1" class="word-part"></span>
-                <span id="word-part-2" class="word-part"></span>
-            </div>
-            <div id="main">
+        <div id="header">
+            <span id="word-part-1" class="word-part"></span><span id="word-part-2" class="word-part"></span><span id="word-part-3" class="word-part"></span>
+        </div>
+        <div id="header-stripe"></div>
+        <div id="main">
+            <div id="left-part" class="main-part">
                 <div id="maze"></div>
             </div>
-            <div id="footer">
-                <span id="level-info">Level: <span id="current-level">1</span> of <span id="total-levels">10</span></span>
-                <div id="progress-bar">
-                    <div id="progress-fill"></div>
-                </div>
+            <div id="right-part" class="main-part">
+                <img id="word-image" src="" alt="Word Image">
             </div>
         </div>
-        <div id="right-side">
-            <img id="word-image" src="" alt="Word Image">
+        <div id="footer-stripe"></div>
+        <div id="footer">
+            <span id="level-info"><span id="current-level">1</span>/<span id="total-levels">10</span></span>
+            <div id="progress-bar">
+            </div>
         </div>
     </div>
     <div id="cinematics-popup" style="display: none;">
-        <video id="cinematics-video" controls></video>
+        <video id="cinematics-video" style="display: none;"></video>
+        <div id="cinematics-fade">
+            <div id="cinematics-slide" class="cinematics-animation">
+                <div id="subtitles"></div>
+            </div>
+        </div>
     </div>
 
+    <div id="credits-screen" style="display: none;">
+        <img id="credits-image" src="assets/credits.jpg">
+    </div>
+
+    <script src="puzzles/list.js"></script>
+    <script src="utils.js"></script>
+    <script src="VideoPlayer.js"></script>
+    <script src="SliderShow.js"></script>
+    <script src="Controller.js"></script>
+    <script src="GUI.js"></script>
+    <script src="Game.js"></script>
+    <script src="Puzzle.js"></script>
+    <script src="Maze.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'CustomFontFamily';
+    src: url('assets/font.woff') format('woff');
+  }
+
+.maze-row {
+    display: flex;
+}
+
+#maze {
+    position: relative;
+}
+
+.maze-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    font-size: 4vh;
+}
+
+.character {
+    position: absolute;
+    transition: top 0.3s, left 0.3s;
+    width: 45px;
+    height: 45px;
+}
+
+.no-transition {
+    transition: none;
+}
+
+.word-part {
+    font-size: 8rem;
+}
+
+#word-part-1 {
+    color: #000;
+}
+
+#word-part-2 {
+    color: #000;
+    animation: fadein 5s;
+}
+
+#word-part-3 {
+    color: #eee;
+}
+
+@keyframes fadein {
+    from {
+      opacity: 0.3;
+    }
+    to {
+      opacity: 1;
+    }
+  }
