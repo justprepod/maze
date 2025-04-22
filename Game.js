@@ -2,7 +2,7 @@ class Game {
     constructor(closeOnFinish) {
       this.controller = new Controller();
       this.gui = new GUI();
-      this.totalLevels = 1;
+      this.totalLevels = 3;
       this.currentLevel = 1;
       this.closeOnFinish = closeOnFinish;
     }
